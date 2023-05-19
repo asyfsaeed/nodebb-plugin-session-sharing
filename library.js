@@ -138,6 +138,7 @@ plugin.process = async (token) => {
 plugin.normalizePayload = async (payload) => {
 	const userData = {};
 
+	console.log(1, payload);
 	if (plugin.settings.payloadParent) {
 		payload = payload[plugin.settings.payloadParent];
 	}
