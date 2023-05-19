@@ -80,6 +80,7 @@ plugin.init = async (params) => {
 };
 
 plugin.appendConfig = async (config) => {
+	console.log('con', config);
 	config.sessionSharing = {
 		logoutRedirect: plugin.settings.logoutRedirect,
 		loginOverride: plugin.settings.loginOverride,
@@ -120,6 +121,7 @@ SocketPlugins.sessionSharing.findUserByRemoteId = async (socket, data) => {
  *	Given a remoteId, show user data
  */
 plugin.getUser = async (remoteId) => {
+	console.log('re', remoteId);
 	const uid = await db.sortedSetScore(plugin.settings.name + ':uid', remoteId);
 
 	if (!uid) {
@@ -130,6 +132,7 @@ plugin.getUser = async (remoteId) => {
 };
 
 plugin.process = async (token) => {
+	console.log('process', token);
 	const payload = await jwt.verify(token, plugin.settings.secret);
 	const userData = await plugin.normalizePayload(payload);
 	const [uid, isNewUser] = await plugin.findOrCreateUser(userData);

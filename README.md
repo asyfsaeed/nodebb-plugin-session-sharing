@@ -13,6 +13,7 @@ achieved via OAuth2 provider, although other alternatives exist. An example of a
 Single sign-on *does not* allow a session to become automatically created if a login is made to another site.
 This is the one misconception that people hold when thinking about SSO and session sharing.
 
+
 This session sharing plugin will allow NodeBB to automatically log in users (and optionally, log out users)
 if the requisite shared cookie is found (more on that below).
 
