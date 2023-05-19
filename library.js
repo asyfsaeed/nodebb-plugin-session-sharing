@@ -59,6 +59,10 @@ payloadKeys.forEach(function (key) {
 });
 
 plugin.init = async (params) => {
+	console.log("***********");
+	console.log("*****setting up******");
+	console.log("***********");
+	console.log("***********");
 	var router = params.router;
 	var hostMiddleware = params.middleware;
 
